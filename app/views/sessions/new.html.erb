@@ -1,0 +1,31 @@
+<div class="container">
+  <form class="form-signin" method="post" action="/sessions">
+    <h2 class="form-signin-heading">Please log in </h2>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input name="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" type="email">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input name="password" id="inputPassword" class="form-control" placeholder="Password" required="" type="password">
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </form>
+
+</div>
+
+
+  <!-- <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:user, url: sessions_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div> -->
