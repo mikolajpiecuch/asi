@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
-  before_filter :authorize
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user
+      @users = User.all
+    else
+      redirect_to root_url, flash: {danger: "You do not have permission"}
+    end
   end
 
   # GET /users/1
@@ -27,26 +30,22 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        session[:user_id] = @user.id
-        redirect_to root_url, flash: {success: "User was successfully created."}
-      else
-        render :new
-      end
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to root_url, flash: { success: "User was successfully created."}
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
+    if current_user.id == @user.id
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        redirect_to @user, flash: { success: 'User was successfully updated.' }
       else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render :edit
       end
     end
   end
@@ -54,10 +53,9 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.id == @user.id
+      @user.destroy
+      redirect_to users_url, flash: { success: 'User was successfully destroyed.' }
     end
   end
 

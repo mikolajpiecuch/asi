@@ -26,10 +26,10 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(trip_params)
-
+    @trip.creator = current_user.id
     respond_to do |format|
       if @trip.save
-        format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
+        format.html { redirect_to @trip, flash: {success: 'Trip was successfully created.' } }
         format.json { render :show, status: :created, location: @trip }
       else
         format.html { render :new }
@@ -41,24 +41,32 @@ class TripsController < ApplicationController
   # PATCH/PUT /trips/1
   # PATCH/PUT /trips/1.json
   def update
-    respond_to do |format|
-      if @trip.update(trip_params)
-        format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
-        format.json { render :show, status: :ok, location: @trip }
-      else
-        format.html { render :edit }
-        format.json { render json: @trip.errors, status: :unprocessable_entity }
+    if current_user.id == @trip.creator
+      respond_to do |format|
+        if @trip.update(trip_params)
+          format.html { redirect_to @trip, flash: { succes: 'Trip was successfully updated.' } }
+          format.json { render :show, status: :ok, location: @trip }
+        else
+          format.html { render :edit }
+          format.json { render json: @trip.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to root_url, flash: { danger: 'You do not have permission'}
     end
   end
 
   # DELETE /trips/1
   # DELETE /trips/1.json
   def destroy
-    @trip.destroy
-    respond_to do |format|
-      format.html { redirect_to trips_url, notice: 'Trip was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.id == @trip.creator
+      @trip.destroy
+      respond_to do |format|
+        format.html { redirect_to trips_url, flash: { success: 'Trip was successfully destroyed.' } }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to root_url, flash: { danger: 'You do not have permission'}
     end
   end
 
