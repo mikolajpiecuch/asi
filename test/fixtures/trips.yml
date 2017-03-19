@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  depdate: 2017-03-19
+  place: MyString
+  description: MyText
+  phone: MyString
+  capacity: 1
+  car: MyString
+
+two:
+  depdate: 2017-03-19
+  place: MyString
+  description: MyText
+  phone: MyString
+  capacity: 1
+  car: MyString
