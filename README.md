@@ -15,3 +15,11 @@ TripsUG jest aplikacją umożliwiająca dzielenia się kosztami paliwa przy wsp�
 - bcrypt: umożliwia przechowywanie haseł użytkowników w postaci zabezpieczonej <br />
 - rails-jquery-autocomplete: autouzupełnianie danych miejsca wyjazdu i samochodu na podstawie wprowadzonych wcześniej danych przez innych użytkowników <b /r>
 - will_paginate-bootstrap: zmiana domyślnego wyglądu paginacji na wygląd oparty na Bootstrapie<br />
+
+<sup>
+Dane do logowania testowego użytkownika:
+login: test@test.com
+hasło: qwerty
+
+Po zalogowaniu można wyświetlić wszystkie przejazdy bieżącego użytkownika klikając w jego dane w prawym górnym rogu.
+</sup
