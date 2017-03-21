@@ -3,31 +3,33 @@
   <h1><%=t '.title', default: model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-    <dt><strong><%= model_class.human_attribute_name(:depdate) %></strong></dt>
-    <dd><%= @trip.depdate %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:place) %></strong></dt>
-    <dd><%= @trip.place %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:description) %></strong></dt>
-    <dd><%= @trip.description %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:phone) %></strong></dt>
-    <dd><%= @trip.phone %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:capacity) %></strong></dt>
-    <dd><%= @trip.capacity %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:car) %></strong></dt>
-    <dd><%= @trip.car %></dd>
-</dl>
-
-<div class="form-group">
-  <%= link_to t('.back', default: t("helpers.links.back")),
-              trips_path, class: 'btn btn-default'  %>
-              <% if @trip.creator == current_user.id %>
-  <%= link_to t('.edit', default: t("helpers.links.edit")),
-              edit_trip_path(@trip), class: 'btn btn-default' %>
-  <%= link_to t('.destroy', default: t("helpers.links.destroy")),
-              trip_path(@trip),
-              method: 'delete',
-              data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },
-              class: 'btn btn-danger' %>
-              <% end %>
-</div>
+<div class="trip panel panel-info">
+  <div class="panel-heading"
+      <h3 class="panel-title"><%= @trip.place %></h3>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+        <dt><strong><%= model_class.human_attribute_name(:description) %></strong></dt>
+        <dd><%= @trip.description %></dd>
+        <dt><strong><%= model_class.human_attribute_name(:phone) %></strong></dt>
+        <dd><%= @trip.phone %></dd>
+        <dt><strong><%= model_class.human_attribute_name(:capacity) %></strong></dt>
+        <dd><%= @trip.capacity %></dd>
+        <dt><strong><%= model_class.human_attribute_name(:car) %></strong></dt>
+        <dd><%= @trip.car %></dd>
+    </dl>
+  </div>
+  <div class="panel-footer">
+    <%= link_to t('.back', default: t("helpers.links.back")),
+                trips_path, class: 'btn btn-default'  %>
+                <% if @trip.creator == current_user.id %>
+    <%= link_to t('.edit', default: t("helpers.links.edit")),
+                edit_trip_path(@trip), class: 'btn btn-default' %>
+    <%= link_to t('.destroy', default: t("helpers.links.destroy")),
+                trip_path(@trip),
+                method: 'delete',
+                data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },
+                class: 'btn btn-danger' %>
+                <% end %>
+              </div>
+              <div>

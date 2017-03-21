@@ -54,3 +54,15 @@
      border-top-left-radius: 0;
      border-top-right-radius: 0;
  }
+
+ .flex-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+ }
+
+.trip {
+  min-width: 250px;
+  min-height: 70px;
+  margin: 10px;
+}
