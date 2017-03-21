@@ -1,14 +1,23 @@
 <% if current_user %>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home",  '/' %></li>
-            <!-- <li><%=link_to(current_user.to_s, edit_user_path(current_user))%></li> -->
-            <li><a href="#"><%= current_user.to_s %></a></li>
-            <li><%= link_to "Log out", logout_path %></li>
-        </ul>
-      </nav>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="/">Trips</a>
+       </div>
+       <div class="collapse navbar-collapse" id="myNavbar">
+         <ul class="nav navbar-nav">
+          <li> <%= link_to "Add Trip", new_trip_path %></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="#"><%= current_user.to_s %></a></li>
+           <li><%= link_to "Log out", logout_path %></li>
+         </ul>
+      </div>
     </div>
-  </header>
+  </nav>
 <% end %>

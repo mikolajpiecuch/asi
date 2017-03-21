@@ -1,28 +1,16 @@
-<<<<<<< HEAD
-# README
+## Mikołaj Piecuch (zaliczenie)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Wersja Ruby   | Wersja Rails  |                Baza danych                 | Framework |           Dodatkowe gemy           |
+| ------------- |:-------------:|:-------------------------------------------|:---------:|:----------------------------------:|
+| 2.4.0        | 5.0.2         | SQLite - lokalnie<br />PostgreSQL - Heroku | Bootstrap | will_paginate, will_paginate-bootstrap |
 
-Things you may want to cover:
 
-* Ruby version
+:white_check_mark: [TripsUG](http://tripsug.herokuapp.com/)
 
-* System dependencies
+### Temat: TripsUG
 
-* Configuration
+TripsUG jest aplikacją umożliwiająca dzielenia się kosztami paliwa przy wspólnych przejazdach samochodowych. Każda zalogowana osoba może oglądać zaoferowane przejazdy przez innych użytkowników. Dodatkowo może dodawać swoje oraz je edytować i usuwać.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
-# Mikołaj Piecuch (zaliczenie)
->>>>>>> 76e5d4b6f7cf4bae15e535949dd18db371189c6e
+### Gemy:<br />
+- will_paginate: prosta paginacja na stronie<br />
+- will_paginate-bootstrap: zmiana domyślnego wyglądu paginacji na wygląd oparty na Bootstrapie<br />
