@@ -32,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker', '~> 1.7', '>= 1.7.2'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+#gem 'searchkick'
+gem 'rails-jquery-autocomplete'
+gem "jquery-ui-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

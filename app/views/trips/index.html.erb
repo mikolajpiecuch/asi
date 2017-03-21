@@ -57,4 +57,7 @@
   </div>
   <!-- </tbody>
 </table> -->
-<%= will_paginate @trips, renderer: BootstrapPagination::Rails, previous_label: "Newer", next_label: "Older", inner_window: 0, outer_window: 0 %>
+
+<div class="paginator">
+  <%= will_paginate @trips, renderer: BootstrapPagination::Rails, previous_label: "Newer", next_label: "Older", inner_window: 0, outer_window: 0 %>
+</div>

@@ -15,7 +15,8 @@
     }])
 end
 
-Faker::Config.locale = 'en-US'
+
+Faker::Base.numerify('(+48) ### ### ###')
 500.times do
   Trip.create([{
       depdate: Faker::Date.backward(30),
@@ -24,6 +25,6 @@ Faker::Config.locale = 'en-US'
       phone: Faker::PhoneNumber.phone_number,
       capacity: Faker::Number.between(1,10),
       car: Faker::StarWars.vehicle,
-      creator: Faker::Number.between(1, 52)
+      creator: Faker::Number.between(1, 50)
     }])
 end

@@ -12,5 +12,6 @@
 TripsUG jest aplikacją umożliwiająca dzielenia się kosztami paliwa przy wspólnych przejazdach samochodowych. Każda zalogowana osoba może oglądać zaoferowane przejazdy przez innych użytkowników. Dodatkowo może dodawać swoje oraz je edytować i usuwać.
 
 ### Gemy:<br />
-- will_paginate: prosta paginacja na stronie<br />
+- bcrypt: umożliwia przechowywanie haseł użytkowników w postaci zabezpieczonej <br />
+- rails-jquery-autocomplete: autouzupełnianie danych miejsca wyjazdu i samochodu na podstawie wprowadzonych wcześniej danych przez innych użytkowników <b /r>
 - will_paginate-bootstrap: zmiana domyślnego wyglądu paginacji na wygląd oparty na Bootstrapie<br />

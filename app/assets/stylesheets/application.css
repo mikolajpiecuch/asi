@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
+ */
  */
 
  body {
@@ -62,7 +64,16 @@
  }
 
 .trip {
-  min-width: 250px;
+  min-width: 200px;
   min-height: 70px;
   margin: 10px;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+}
+
+.glyphicon {
+  font-size: 30px;
 }

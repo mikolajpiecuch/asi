@@ -1,6 +1,8 @@
 class TripsController < ApplicationController
   before_filter :authorize
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  autocomplete :trip, :place
+  autocomplete :trip, :car
 
   # GET /trips
   # GET /trips.json
