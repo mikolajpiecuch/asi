@@ -14,7 +14,7 @@
           <li> <%= link_to "Add Trip", new_trip_path %></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-           <li><a href="#"><%= current_user.to_s %></a></li>
+           <li><a href="/trips?userid=<%= current_user.id %>"><%= current_user.to_s %></a></li>
            <li><%= link_to "Log out", logout_path %></li>
          </ul>
       </div>

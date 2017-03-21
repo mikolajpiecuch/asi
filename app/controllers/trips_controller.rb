@@ -5,7 +5,11 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
-    @trips = Trip.order('trips.depdate DESC').all.paginate(:page => params[:page], per_page: 10)
+    if params[:userid]
+      @trips = Trip.order('trips.depdate DESC').all.paginate(:page => params[:page], per_page: 10).where("creator=#{params[:userid]}")
+    else
+      @trips = Trip.order('trips.depdate DESC').all.paginate(:page => params[:page], per_page: 10)
+    end
   end
 
   # GET /trips/1
