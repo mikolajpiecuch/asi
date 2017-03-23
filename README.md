@@ -2,7 +2,7 @@
 
 | Wersja Ruby   | Wersja Rails  |                Baza danych                 | Framework |           Dodatkowe gemy           |
 | ------------- |:-------------:|:-------------------------------------------|:---------:|:----------------------------------:|
-| 2.4.0        | 5.0.2         | SQLite - lokalnie<br />PostgreSQL - Heroku | Bootstrap | will_paginate, will_paginate-bootstrap |
+| 2.4.0        | 5.0.2         | SQLite - lokalnie<br />PostgreSQL - Heroku | Bootstrap | bcrypt, rails-jquery-autocomplete, will_paginate-bootstrap |
 
 
 :white_check_mark: [TripsUG](http://tripsug.herokuapp.com/)
